@@ -23,6 +23,14 @@ module.exports = {
           '^/api': ''
         },
       },
+      '/two': {
+        //是否允许跨域
+        changeOrigin: true,
+        target: 'http://127.0.0.1:3000/',
+        pathRewrite: {
+          '^/two': ''
+        },
+      },
       //
       // '/index': {
       //   //是否允许跨域

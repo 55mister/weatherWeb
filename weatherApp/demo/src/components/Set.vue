@@ -28,26 +28,26 @@ export default {
 
 <script>
 import axios from "axios";
+//axios.defaults.baseURL = "http://127.0.0.1:5500";
 
 export default {
   name: "set",
   data() {
-    return {};
+    return {
+      cityKey: "101280101",
+      cityname: "广州市"
+    };
   },
   created: function() {
     console.log("123");
     axios
-      .get("index.db", { responseType: "arraybuffer" })
+      .get("/two/getCityForm", {
+        params: {
+          name: this.cityname
+        }
+      })
       .then(function(response) {
-        let db = new window.SQL.Database(new Uint8Array(response.data));
-        // 执行查询
-
-        let r = db.exec("SELECT * FROM cityform ");
-        console.log(r);
-
-        // 解析数据
-        // let obj = dbToObj(r);
-        // console.info(obj);
+        console.log(response);
       })
       .catch(function(error) {
         console.info(error);

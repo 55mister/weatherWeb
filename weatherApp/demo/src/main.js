@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 // Vue.prototype.$http = axios
 
 Vue.prototype.$axios = axios
-// axios.defaults.baseURL = '/api'
+// axios.defaults.baseURL = 'http://127.0.0.1:5500'
 
 
 
